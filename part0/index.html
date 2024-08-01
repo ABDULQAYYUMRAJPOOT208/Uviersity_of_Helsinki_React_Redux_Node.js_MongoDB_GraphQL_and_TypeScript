@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <h1>Notes</h1>
+    <ul id="allNotes"></ul>
+    <input type="text" />
+    <button type="submit" onclick="handleClick()">Save</button>
+  </body>
+  <script>
+    handleClick = function () {
+      const note = document.querySelector("input").value;
+      document.querySelector("#allNotes").innerHTML += `<li>${note}</li>`;
+      document.querySelector("input").value = "";
+    };
+  </script>
+</html>
