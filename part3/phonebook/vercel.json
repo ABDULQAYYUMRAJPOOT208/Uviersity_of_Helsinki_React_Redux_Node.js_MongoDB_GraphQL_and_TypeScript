@@ -1,9 +1,8 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/src/main.jsx" },
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/backend/index.js"
+      "src": "/src/App.jsx",
+      "dest": "src/App.jsx"
     }
   ]
 }
