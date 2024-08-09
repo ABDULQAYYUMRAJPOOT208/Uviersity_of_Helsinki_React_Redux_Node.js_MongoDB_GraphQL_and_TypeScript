@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/src/App.jsx",
-      "dest": "src/App.jsx"
-    }
-  ]
-}
