@@ -31,7 +31,11 @@ const PersonForm = ({
             setMessage("Data updated successfully");
             setError(false);
             setShowMessage(true);
-          });
+          }).catch((err) => {
+          setMessage("Error invalid try different length of content : " + err.message);
+          setError(true);
+          setShowMessage(true);
+        });
       }
     } else {
       await axios
@@ -39,6 +43,10 @@ const PersonForm = ({
         .then(async (result) => {
           setMessage("Data inserted successfully");
           setError(false);
+          setShowMessage(true);
+        }).catch((err) => {
+          setMessage("Error invalid try different length of content : " + err.message);
+          setError(true);
           setShowMessage(true);
         });
     }
