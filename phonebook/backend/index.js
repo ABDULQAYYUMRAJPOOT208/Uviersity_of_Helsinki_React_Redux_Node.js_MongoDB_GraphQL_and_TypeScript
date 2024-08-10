@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
-const con = require("./config.js"); // MongoDB connection
-const Phone = require("./model.js"); // Mongoose model
+const con = require("./config.js");
+const Phone = require("./model.js");
 
 // Middleware
 app.use(express.json());
