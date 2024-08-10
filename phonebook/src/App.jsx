@@ -20,7 +20,7 @@ const App = () => {
         })
         .catch((err) => {
           setError(true);
-          setMessage("Backend server should be started before continuing");
+          setMessage("Backend server should be localy started before continuing");
           setShowMessage(true);
           console.warn(err);
         });
