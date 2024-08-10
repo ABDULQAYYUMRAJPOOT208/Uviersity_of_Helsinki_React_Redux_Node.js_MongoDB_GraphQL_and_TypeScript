@@ -19,6 +19,9 @@ const App = () => {
           setPersons(result.data);
         })
         .catch((err) => {
+          setError(true);
+          setMessage("Backend server should be started before continuing");
+          setShowMessage(true);
           console.warn(err);
         });
     };

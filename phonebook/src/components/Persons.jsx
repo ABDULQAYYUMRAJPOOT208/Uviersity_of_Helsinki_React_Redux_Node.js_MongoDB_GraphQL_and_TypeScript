@@ -16,14 +16,18 @@ const Persons = ({
       await axios
         .delete(`http://localhost:3001/api/persons/${id}`)
         .then(async () => {
-          alert("Data deleted successfully");
+          setShowMessage(true);
+          setMessage("Data deleted successfully");
+          setError(false);
           await axios.get(`http://localhost:3001/api/persons`).then((data) => {
             setPersons(data.data);
             console.log(persons);
           });
         })
         .catch((err) => {
-          alert("Error deleting data: " + err.message);
+          setShowMessage(true);
+          setError(true);
+          setMessage("Error deleting data: " + err.message);
         });
     } else {
       return;
