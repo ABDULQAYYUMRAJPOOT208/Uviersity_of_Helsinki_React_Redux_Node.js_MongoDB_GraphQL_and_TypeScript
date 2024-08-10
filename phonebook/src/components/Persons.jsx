@@ -33,10 +33,10 @@ const Persons = ({
     <ul>
       {persons.length > 0 ? (
         <>
-          {persons.map((person) => (
-            <li key={person.id}>
+          {persons.map((person, idx) => (
+            <li key={idx}>
               {person.name} {person.number}{" "}
-              <button onClick={() => handleClick(person.id)}>delete</button>
+              <button onClick={() => handleClick(person._id)}>delete</button>
             </li>
           ))}
         </>

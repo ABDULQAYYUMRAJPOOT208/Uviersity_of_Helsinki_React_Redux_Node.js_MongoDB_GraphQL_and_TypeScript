@@ -13,14 +13,6 @@ const App = () => {
   const [error, setError] = useState(true);
   useEffect(() => {
     const fetchAllData = async () => {
-      // await db
-      //   .getAll()
-      //   .then((data) => {
-      //     setPersons(data);
-      //   })
-      //   .catch((err) => {
-      //     alert(err.message);
-      //   });
       await axios
         .get("http://localhost:3001/api/persons")
         .then((result) => {

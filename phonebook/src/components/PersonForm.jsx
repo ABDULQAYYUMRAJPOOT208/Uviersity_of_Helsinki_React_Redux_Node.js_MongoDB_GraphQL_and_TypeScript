@@ -25,23 +25,21 @@ const PersonForm = ({
           `${pid.name} is already added to phonebook, replace the old number with a new one?`
         )
       ) {
-        db.update(pid.id, newPerson).then((result) => {
-          setMessage("Data updated successfully");
-          setError(false);
-          setShowMessage(true);
-          return;
-        });
-      } else {
-        return;
+        await axios
+          .put(`http://localhost:3001/api/persons/${pid.id}`, newPerson)
+          .then((response) => {
+            setMessage("Data updated successfully");
+            setError(false);
+            setShowMessage(true);
+          });
       }
     } else {
       await axios
         .post("http://localhost:3001/api/persons", newPerson)
-        .then((result) => {
+        .then(async (result) => {
           setMessage("Data inserted successfully");
           setError(false);
           setShowMessage(true);
-          console.log(result);
         });
     }
 
